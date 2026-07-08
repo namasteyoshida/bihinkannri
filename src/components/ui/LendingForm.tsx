@@ -30,7 +30,7 @@ export default function LendingForm() {
     });
 
     const [lendingList, setLendingList] = useState<LendingRecord[]>([]);
-    const [maxId, setMaxId] = useState(1);
+    const [maxId, setMaxId] = useState(1); // IDの初期値を1に設定
 
     // 貸出データを登録（リストへ追加）
     const onsubmit: SubmitHandler<LendingFormValues> = (data) => {
@@ -78,6 +78,7 @@ export default function LendingForm() {
                         {...register('equipmentName', {
                             required: '備品名は必須入力です',
                         })}
+                    
                     />
                     <div className="error" style={{ color: 'red' }}>{errors.equipmentName?.message}</div>
                 </div>
